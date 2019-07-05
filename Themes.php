@@ -168,9 +168,9 @@ editor.on("change", function() {
 				if (empty($billic->errors)) {
 					$db->insert('themes', array(
 						'name' => $_POST['name'],
-						'header' => $GLOBALS['billic_theme_default']['header'],
-						'footer' => $GLOBALS['billic_theme_default']['footer'],
-						'css' => $GLOBALS['billic_theme_default']['css'],
+						'header' => $billic->theme['header'],
+						'footer' => $billic->theme['footer'],
+						'css' => $billic->theme['css'],
 					));
 					$billic->redirect('/Admin/Themes/Name/' . urlencode($_POST['name']) . '/');
 				}
